@@ -1,0 +1,7 @@
+<h2>Habilidades Informaticas</h2>
+<div *ngFor="let barra of barras" class="skills-container" id="skills">
+    <div class="title">{{ barra.habilidad }}</div>
+    <div class="bar">
+      <span style="width:{{barra.nivel}}" ></span>
+    </div>
+</div>  

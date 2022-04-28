@@ -1,1 +1,337 @@
-/* You can add global styles to this file, and also import other style files */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    height: 100%;
+    font-family: Calibri;
+  }
+  .grid-portfolio > * {
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+  }
+  /*Header*/
+  .header {
+    grid-area: header;
+    background-color: #495371;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header .yoProgramo {
+    display: flex;
+    align-items: center;
+  }
+  .header .iconos-container {
+    align-items: center;
+    display: flex;
+  }
+  .icono img {
+    max-width: 100%;
+    max-height: 45px;
+  }
+  .menu-icono img {
+    max-width: 100%;
+    max-height: 32px;
+  }
+  header .icono {
+    transition: 150ms;
+  }
+  header .icono:hover {
+    transform: scale(0.95);
+  }
+  .logo {
+    display: flex;
+    background-color: whitesmoke;
+    font-weight: bolder;
+    padding: 0em 0.3em;
+    font-size: 1.2em;
+    border: solid whitesmoke;
+    box-shadow: -1px 1px 7px 0px whitesmoke;
+    border-radius: 4px;
+    color: #495371;
+    text-align: center;
+  }
+  .curso {
+    margin-left: 0.5em;
+  }
+  .desplegables {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+    position: absolute;
+    background-color: black;
+    box-shadow: -1px 1px 7px 0px black;
+    border: 1px solid;
+    border-color: black;
+    padding: 10px 10px;
+    right: 7px;
+    top: 46px;
+    transition: all 300ms ease;
+    border-radius: 5px;
+  }
+  
+  li {
+    padding: 4px 0px;
+    text-decoration: none;
+    list-style: none;
+  }
+  .btn {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #495371;
+    border-color: 495371;
+    color: white;
+  }
+  .desplegables a {
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+    text-align: left;
+    size: 8px;
+  }
+  .menu-icono:hover .desplegables {
+    visibility: visible;
+    opacity: 1;
+  }
+  .desplegables::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid black;
+    position: absolute;
+    top: -12px;
+    right: 10px;
+  }
+  
+  .desplegables li input {
+    text-align: center;
+    border: transparent;
+    border-bottom: 1px solid white;
+    background: black;
+    outline: none;
+    height: 25px;
+    color: #fff;
+  }
+  .desplegables li input::placeholder {
+    color: #fff;
+    opacity: 0.7;
+  }
+  .menu-icono {
+    display: flex;
+  }
+  
+  /*/header*/
+  /*perfil*/
+  
+  .perfil {
+    padding: 0px;
+    grid-area: perfil;
+    display: flex;
+    background-image: url("https://placekitten.com/500/400");
+    overflow: hidden;
+  }
+  .grid-container {
+    position: relative;
+    display: grid;
+    min-height: 100%;
+    grid-template:
+      "avatar portada" 55%
+      "perfil-content perfil-content" auto;
+  }
+  .portada {
+    grid-area: portada;
+  }
+  .perfil-content {
+    grid-area: perfil-content;
+    margin: 0;
+    border-radius: 0px 40px 0px 0px;
+    padding: 10px 10px 0px 10px;
+    background-color: #98b4aa;
+    text-align: left;
+  }
+  .perfil-content p {
+    text-align: left;
+    margin-left: 30px;
+  }
+  .h {
+    margin-left: 100px;
+  }
+  .imagen {
+    position: relative;
+    display: flex;
+    grid-area: avatar;
+  }
+  .avatar {
+    position: absolute;
+    margin: 0 auto;
+    margin-left: 10px;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: -1px 1px 7px 0px whitesmoke;
+  }
+  /*/perfil*/
+  /*Experiencia*/
+  .experiencia {
+    grid-area: experiencia;
+    background-color: #495371;
+  }
+  /*/Experiencia*/
+  .estudios {
+    grid-area: estudios;
+    background-color: #74959a;
+  }
+  .lista {
+    padding: 0px;
+    text-align: left;
+    margin-bottom: 0px;
+  }
+  /* skills*/
+  .skills {
+    grid-area: skills;
+    background-color: #98b4aa;
+    display: grid;
+  }
+  .skills-container {
+    padding: 0px 30px;
+    height: 100%;
+    color: black;
+    display: grid;
+    place-items: center;
+  }
+  
+  .title {
+    width: 100%;
+    text-align: left;
+    padding-bottom: 2px;
+    opacity: 0;
+    animation: animationText 0.4s 0.5s linear forwards;
+  }
+  @keyframes animationText {
+    100% {
+      opacity: 1;
+    }
+  }
+  .skills-container:first-child {
+    margin-top: 0px;
+  }
+  
+  .skills-container .bar {
+    background-color: grey;
+    height: 10px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  }
+  .skills-container .bar span {
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  }
+  @keyframes animate {
+    100% {
+      transform: scaleX(1);
+    }
+  }
+ 
+  @keyframes animation_cube {
+    100% {
+      opacity: 1;
+    }
+  }
+  /*/skills*/
+  /*Proyectos*/
+  .proyectos {
+    grid-area: proyectos;
+    background-color: #495371;
+    align-items: center;
+    overflow: hidden;
+  }
+  .slick_proyectos {
+    margin: 0 auto;
+    margin-top: 5px;
+    height: 200px;
+    width: 90%;
+  }
+  .articulo {
+    margin-left: 10px;
+    height: 205px;
+    width: 170px;
+    background-color: #fff;
+    border-radius: 15px;
+    color: #495371;
+    overflow: hidden;
+  }
+  .articulo:hover {
+    transform: translateY(-3%);
+  }
+  .card p {
+    font-size: 12px;
+  }
+  .card img {
+    width: 100%;
+    height: 100px;
+  }
+  
+  /*/proyectos*/
+  /*footer*/
+  .footer {
+    grid-area: footer;
+    background-color: #74959a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .contactos {
+    margin: 0px;
+    padding: 0px;
+  }
+  .contactos a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  /*/footer*/
+  .grid-portfolio {
+    background-color: #f1e0ac;
+    display: grid;
+    gap: 10px;
+    min-height: 100%;
+    grid-template:
+      "header" 50px
+      "perfil" 145px
+      "experiencia" auto
+      "estudios" auto
+      "skills" auto
+      "proyectos" auto
+      "footer" 20px;
+  }
+  
+  @media (min-width: 850px) {
+    .grid-portfolio {
+      grid-template:
+        "header header header header" 50px
+        "perfil perfil perfil perfil" 145px
+        "estudios estudios experiencia experiencia" auto
+        "skills skills proyectos proyectos " auto
+        "footer footer footer footer" 50px /
+        25% 25% auto 100px;
+    }
+  }
+  

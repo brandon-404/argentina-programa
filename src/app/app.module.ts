@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
@@ -19,12 +21,10 @@ import { FooterComponent } from './components/footer/footer.component';
     EstudiosComponent,
     HabilidadesComponent,
     ProyectosComponent,
-    FooterComponent
+    FooterComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, SlickCarouselModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

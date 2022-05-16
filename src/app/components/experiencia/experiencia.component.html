@@ -1,6 +1,4 @@
 <h2>Experiencia</h2>
-<ul class="lista">
-  <li>Olimpiadas de programacion en el lenguaje C++</li>
-  <li>Olimpiadas de Informatica con herramientas de Office</li>
-  <li>Docente tutor en “Club de Programación” en IPET 424</li>
+<ul class="lista" *ngFor="let experiencia of misExperiencias">
+  <li>{{experiencia.leyenda}}</li>
 </ul>

@@ -33,16 +33,17 @@
   }
   .icono img {
     max-width: 100%;
-    max-height: 45px;
+    max-height: 36px;
   }
   .menu-icono img {
     max-width: 100%;
-    max-height: 32px;
+    max-height: 36px;
   }
-  header .icono {
+  .header .icono, .header .menu-icono{
     transition: 150ms;
+    margin-right: 3px;
   }
-  header .icono:hover {
+  .header .icono:hover {
     transform: scale(0.95);
   }
   .logo {
@@ -135,8 +136,12 @@
     padding: 0px;
     grid-area: perfil;
     display: flex;
-    background-image: url("https://placekitten.com/500/400");
     overflow: hidden;
+  }
+  .img_portada{
+    display:flex; 
+    height:100%; 
+    width:100%;
   }
   .grid-container {
     position: relative;
@@ -315,19 +320,19 @@
     min-height: 100%;
     grid-template:
       "header" 50px
-      "perfil" 145px
+      "perfil" 147px
       "experiencia" auto
       "estudios" auto
       "skills" auto
       "proyectos" auto
       "footer" 20px;
   }
-  
+    
   @media (min-width: 850px) {
     .grid-portfolio {
       grid-template:
         "header header header header" 50px
-        "perfil perfil perfil perfil" 145px
+        "perfil perfil perfil perfil" 147px
         "estudios estudios experiencia experiencia" auto
         "skills skills proyectos proyectos " auto
         "footer footer footer footer" 50px /

@@ -4,15 +4,15 @@
   #slickModal="slick-carousel"
   [config]="slideConfig"
 >
-  <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+  <div ngxSlickItem *ngFor="let proyecto of misProyectos" class="slide">
     <div class="articulo">
       <div class="card">
       <figure>
-        <img src="{{ slide.img }}" alt="" width="100%" />
+        <img src="{{ proyecto.link_image }}" alt="" width="100%" />
       </figure>
-      <h3>{{ slide.titulo }}</h3>
-      <p>{{ slide.tecno }}</p>
-      <a href={{slide.link}}>Ver Mas</a>
+      <h3>{{ proyecto.titulo }}</h3>
+      <p>{{ proyecto.tecnologias }}</p>
+      <a href={{proyecto.link}}>Ver Mas</a>
     </div>
     </div>
   </div>

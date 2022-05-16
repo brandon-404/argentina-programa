@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProyectosService} from 'src/app/services/proyectos/proyectos.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -6,32 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./proyectos.component.css'],
 })
 export class ProyectosComponent implements OnInit {
-  slides = [
-    {
-      img: 'https://via.placeholder.com/600.png/09f/fff',
-      titulo: 'Proyecto 1',
-      tecno: '#tecno_1 #tecno_2',
-      link: '',
-    },
-    {
-      img: 'https://via.placeholder.com/600.png/09f/fff',
-      titulo: 'Proyecto 2',
-      link: '',
-      tecno: '#tecno_1 #tecno_2',
-    },
-    {
-      img: 'https://via.placeholder.com/600.png/09f/fff',
-      titulo: 'Proyecto 3',
-      link: '',
-      tecno: '#tecno_1 #tecno_2',
-    },
-    {
-      img: 'https://via.placeholder.com/600.png/09f/fff',
-      titulo: 'Proyecto 4',
-      link: '',
-      tecno: '#tecno_1 #tecno_2',
-    },
-  ];
+  misProyectos:any;
   slideConfig = {
     slidesToShow: 3,
     autoplay: true,
@@ -59,7 +35,11 @@ export class ProyectosComponent implements OnInit {
     ],
   };
 
-  constructor() {}
+  constructor(private datosPortfolio:ProyectosService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.datosPortfolio.mostrarProyectos().subscribe(data => {
+      this.misProyectos = data;
+    })
+  }
 }

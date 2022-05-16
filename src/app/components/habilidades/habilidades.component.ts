@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SkillsService} from "src/app/services/skills/skills.service";
 
 @Component({
   selector: 'app-habilidades',
@@ -6,16 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit {
-
-  barras = [
-    {habilidad:"HTML", nivel:"50%"},
-    {habilidad:"CSS", nivel:"50%"},
-    {habilidad:"JS", nivel:"100%"}
-  ];
-
-  constructor() { }
+  misSkills:any;
+  constructor(private datosPortfolio:SkillsService) { }
 
   ngOnInit(): void {
+    this.datosPortfolio.mostrarSkills().subscribe(data=>{
+      this.misSkills = data;
+    })
   }
 
 }

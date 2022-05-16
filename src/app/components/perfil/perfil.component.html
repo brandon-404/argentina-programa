@@ -1,14 +1,16 @@
-<div class="grid-container">
-  <div class="imagen">
-    <img
-      src="https://placekitten.com/200/200"
-      class="avatar"
-      style="padding: 0px"
-    />
-  </div>
-  <div class="portada"></div>
-  <div class="perfil-content">
-    <h1 class="h">Pereyra Brandon</h1>
-    <h4 class="h">Full Stack Developer Jr</h4>
+<div class="img_portada" style="background-image: url({{ myUser[0].img_portada }}); ">
+  <div class="grid-container">
+    <div class="imagen">
+      <img
+        src="{{ myUser[0].img_perfil }}"
+        class="avatar"
+        style="padding: 0px"
+      />
+    </div>
+    <div class="portada"></div>
+    <div class="perfil-content">
+      <h1 class="h">{{ myUser[0].name }}</h1>
+      <h4 class="h">{{ myUser[0].titulo }}</h4>
+    </div>
   </div>
 </div>

@@ -11,7 +11,9 @@ import { EstudiosComponent } from './components/estudios/estudios.component';
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
-import {HttpClientModule } from '@angular/common/http'
+import {HttpClientModule } from '@angular/common/http';
+import { CrudRComponent } from './components/crudR/crud-r/crud-r.component';
+import { CrudEstudiosComponent } from './components/crudR/crud-estudios/crud-estudios.component'
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import {HttpClientModule } from '@angular/common/http'
     HabilidadesComponent,
     ProyectosComponent,
     FooterComponent,
+    CrudRComponent,
+    CrudEstudiosComponent,
   ],
   imports: [BrowserModule, SlickCarouselModule,  HttpClientModule],
   providers: [],

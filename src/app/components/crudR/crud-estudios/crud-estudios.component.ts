@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Estudios } from 'src/app/models/estudios';
+import { Estudio } from 'src/app/models/estudios';
 import { EstudiosService } from 'src/app/services/estudios/estudios.service';
 
 @Component({
@@ -8,18 +8,34 @@ import { EstudiosService } from 'src/app/services/estudios/estudios.service';
   styleUrls: ['./crud-estudios.component.css']
 })
 export class CrudEstudiosComponent implements OnInit {
-  misEstudios: Estudios [] = [];
+  misEstudios: Estudio [] = [];
   constructor(private datosPortfolio:EstudiosService) { }
-  selectedEstudios: Estudios = new Estudios();
+  selectedEstudios: Estudio = new Estudio();
   addOrEdit(){
     this.datosPortfolio.saveEstudio(this.selectedEstudios).subscribe(data =>{
       this.datosPortfolio.mostrarEstudios().subscribe(data => {
         this.misEstudios = data;
       })
     });
-    this.selectedEstudios = new Estudios();
+    this.selectedEstudios = new Estudio();
   }
   
+  openForEdit(estudio: Estudio) {
+    this.selectedEstudios = estudio;
+  }
+  cancelEdit(){
+    this.selectedEstudios = new Estudio();
+    this.datosPortfolio.mostrarEstudios().subscribe(data => {
+      this.misEstudios = data;
+    })
+  }
+  delete(id: number | undefined): void {
+    this.datosPortfolio.deleteEstudio(id).subscribe(data => {
+      this.datosPortfolio.mostrarEstudios().subscribe(data => {
+        this.misEstudios = data;
+      })
+    })
+  }
 
   ngOnInit(): void {
     

@@ -32,7 +32,13 @@ import { RouterModule } from '@angular/router';
     CrudEstudiosComponent,
     VistaPrincipalComponent,
   ],
-  imports: [BrowserModule, SlickCarouselModule,  HttpClientModule, FormsModule,],
+  imports: [BrowserModule, SlickCarouselModule,  HttpClientModule, FormsModule,
+    RouterModule.forRoot([
+      { path: '', redirectTo : "portfolio", pathMatch : "full"},
+      { path: 'portfolio', component: VistaPrincipalComponent },
+      { path: 'crudRepository', component: CrudRComponent }
+    ]),
+  ],
   providers: [],
   bootstrap: [AppComponent],
  

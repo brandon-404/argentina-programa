@@ -9,12 +9,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let estudio of misEstudios">
+        <tr *ngFor="let estudio of misEstudios" class="list-group-item-action">
           <th scope="row">{{ estudio.id }}</th>
-          <td>{{ estudio.leyenda }}</td>
-          <td>
-            <button class="btn btn-danger">eliminar</button>
-            <button class="btn btn-warning">modificar</button>
+          <td >{{ estudio.leyenda }}</td>
+          <td>  
+            <button class="btn btn-danger" (click)=" delete(estudio.id)">eliminar</button>
+            <button class="btn btn-warning" (click)="openForEdit(estudio)">modificar</button>
           </td>
         </tr>
       </tbody>
@@ -25,11 +25,17 @@
                 ingrese nuevos datos
             </div>
             <div class="form-group" >
+                <div class="item">
+                  {{selectedEstudios.id}}
+                </div>
                 <input type="text" [(ngModel)]="selectedEstudios.leyenda" placeholder="Ingrese una leyenda" class="form-control">
             </div>
-            <button class="btn btn-primary" (click)="addOrEdit()">
+            <button class="btn btn-primary" (click)="addOrEdit()" style="margin-top: 4px;">
                 submit
             </button>
+            <button class="btn btn-primary" (click)="cancelEdit()" style="margin-left: 4px; margin-top: 4px;">
+                cancel
+          </button>
         </div>
  
     </div>

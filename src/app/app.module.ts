@@ -14,6 +14,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import {HttpClientModule } from '@angular/common/http';
 import { CrudRComponent } from './components/crudR/crud-r/crud-r.component';
 import { CrudEstudiosComponent } from './components/crudR/crud-estudios/crud-estudios.component'
+import { FormsModule } from '@angular/forms';
+import { VistaPrincipalComponent } from './components/vista-principal/vista-principal.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -27,8 +30,9 @@ import { CrudEstudiosComponent } from './components/crudR/crud-estudios/crud-est
     FooterComponent,
     CrudRComponent,
     CrudEstudiosComponent,
+    VistaPrincipalComponent,
   ],
-  imports: [BrowserModule, SlickCarouselModule,  HttpClientModule],
+  imports: [BrowserModule, SlickCarouselModule,  HttpClientModule, FormsModule,],
   providers: [],
   bootstrap: [AppComponent],
  

@@ -22,11 +22,12 @@
     "ngx-slick-carousel": "^0.6.0",
     "rxjs": "~7.4.0",
     "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.4.14",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~13.1.2",
+    "@angular-devkit/build-angular": "^13.3.5",
     "@angular/cli": "~13.1.2",
     "@angular/compiler-cli": "~13.1.0",
     "@types/jasmine": "~3.10.0",

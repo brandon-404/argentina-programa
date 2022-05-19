@@ -23,7 +23,6 @@ export class EstudiosService {
   }
 
   saveEstudio(estudio : Estudio) : Observable<any>{
-    console.log(estudio);
     return this.http.post(this.URL + "/save", estudio)
   }
   editarEstudio(id: number,estudio : Estudio) : Observable<any>{

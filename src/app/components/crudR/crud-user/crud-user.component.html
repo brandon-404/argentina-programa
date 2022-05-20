@@ -1,0 +1,84 @@
+<div class="container">
+    <h2>Datos del Usuario</h2>
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Nombre y Apellido</th>
+          <th scope="col">Email</th>
+          <th scope="col">titulo</th>
+          <th scope="col">Imangen de perfil</th>
+          <th scope="col">Imangen de portada</th>
+          <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="list-group-item-action">
+          <td scope="row">{{ myUser.name }}</td>
+          <td>{{ myUser.correo }}</td>
+          <td>{{ myUser.titulo }}</td>
+          <td>{{ myUser.img_perfil }}</td>
+          <td>{{ myUser.img_portada }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="delete(myUser.id)">
+              eliminar
+            </button>
+            <button class="btn btn-warning" (click)="openForEdit(myUser)">
+              modificar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">ingrese nuevos datos</div>
+        <div class="form-group">
+          <input
+            type="text"
+            [(ngModel)]="selectedUSer.name"
+            placeholder="Ingrese el nombre del usuario"
+            class="form-control"
+          />
+          <input
+            type="text"
+            [(ngModel)]="selectedUSer.correo"
+            placeholder="Ingrese el correo del usuario"
+            class="form-control"
+          />
+          <input
+            type="text"
+            [(ngModel)]="selectedUSer.titulo"
+            placeholder="Ingrese el titulo principal del usuario"
+            class="form-control"
+          />
+          <input
+            type="text"
+            [(ngModel)]="selectedUSer.img_perfil"
+            placeholder="Ingrese el link de una imagen para el perfil"
+            class="form-control"
+          />
+          <input
+            type="text"
+            [(ngModel)]="selectedUSer.img_portada"
+            placeholder="Ingrese el link de una imagen para la portada"
+            class="form-control"
+          />
+        </div>
+        <button
+          class="btn btn-primary"
+          (click)="addOrEdit()"
+          style="margin-top: 4px"
+        >
+          submit
+        </button>
+        <button
+          class="btn btn-primary"
+          (click)="cancelEdit()"
+          style="margin-left: 4px; margin-top: 4px"
+        >
+          cancel
+        </button>
+      </div>
+    </div>
+  </div>
+  

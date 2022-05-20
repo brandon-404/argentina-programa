@@ -17,6 +17,9 @@ import { CrudEstudiosComponent } from './components/crudR/crud-estudios/crud-est
 import { FormsModule } from '@angular/forms';
 import { VistaPrincipalComponent } from './components/vista-principal/vista-principal.component';
 import { RouterModule } from '@angular/router';
+import { CrudExperienciaComponent } from './components/crudR/crud-experiencia/crud-experiencia/crud-experiencia.component';
+import { CrudSocialComponent } from './components/crudR/crud-social/crud-social/crud-social.component';
+import { CrudSkillsComponent } from './components/crudR/crud-skills/crud-skills.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { RouterModule } from '@angular/router';
     CrudRComponent,
     CrudEstudiosComponent,
     VistaPrincipalComponent,
+    CrudExperienciaComponent,
+    CrudSocialComponent,
+    CrudSkillsComponent,
   ],
   imports: [BrowserModule, SlickCarouselModule,  HttpClientModule, FormsModule,
     RouterModule.forRoot([

@@ -1,0 +1,42 @@
+<div class="container">
+    <h2>habilidades Informaticas</h2>
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre Tecnologia</th>
+          <th scope="col">Nivel de tecnologia</th>
+          <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let skill of misSkilss" class="list-group-item-action">
+          <td scope="row">{{ skill.id }} </td>
+          <td >{{ skill.nombre_tecnologia }} </td>
+          <td>{{ skill.skill_lvl}}</td>
+          <td>  
+            <button class="btn btn-danger" (click)=" delete(skill.id)">eliminar</button>
+            <button class="btn btn-warning" (click)="openForEdit(skill)">modificar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                ingrese nuevos datos
+            </div>
+            <div class="form-group" >
+                <input type="text" [(ngModel)]="selectedSkills.nombre_tecnologia" placeholder="Ingrese el nombre de una tecnologia" class="form-control">
+                <input type="text" [(ngModel)]="selectedSkills.skill_lvl" placeholder="Ingrese el nivel de masterizacionde esa tecnologia" class="form-control">
+            </div>
+            <button class="btn btn-primary" (click)="addOrEdit()" style="margin-top: 4px;">
+                submit
+            </button>
+            <button class="btn btn-primary" (click)="cancelEdit()" style="margin-left: 4px; margin-top: 4px;">
+                cancel
+          </button>
+        </div>
+ 
+    </div>
+  </div>

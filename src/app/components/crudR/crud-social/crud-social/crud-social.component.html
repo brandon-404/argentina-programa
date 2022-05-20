@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>Redes sociales</h2>
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Link </th>
+          <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let red of misRedes" class="list-group-item-action">
+          <td scope="row">{{ red.redSocial }} </td>
+          <td >{{ red.link }} </td>
+          <td>  
+            <button class="btn btn-danger" (click)=" delete(red.id)">eliminar</button>
+            <button class="btn btn-warning" (click)="openForEdit(red)">modificar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                ingrese nuevos datos
+            </div>
+            <div class="form-group" >
+                <input type="text" [(ngModel)]="selectedRed.redSocial" placeholder="Ingrese una Red Social" class="form-control">
+                <input type="text" [(ngModel)]="selectedRed.link" placeholder="Ingrese un link" class="form-control">
+            </div>
+            <button class="btn btn-primary" (click)="addOrEdit()" style="margin-top: 4px;">
+                submit
+            </button>
+            <button class="btn btn-primary" (click)="cancelEdit()" style="margin-left: 4px; margin-top: 4px;">
+                cancel
+          </button>
+        </div>
+ 
+    </div>
+  </div>

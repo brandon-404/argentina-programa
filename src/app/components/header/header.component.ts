@@ -14,16 +14,16 @@ export class HeaderComponent implements OnInit {
   constructor(private datosPortfolio : SocialService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.mostrarRedSocial("Facebook").subscribe(data=> {
+    this.datosPortfolio.mostrarPorNombre("Facebook").subscribe(data=> {
       this.Facebook= data;
     })
-    this.datosPortfolio.mostrarRedSocial("Instagram").subscribe(data=> {
+    this.datosPortfolio.mostrarPorNombre("Instagram").subscribe(data=> {
       this.Instagram= data;
     })
-    this.datosPortfolio.mostrarRedSocial("GitHub").subscribe(data=> {
+    this.datosPortfolio.mostrarPorNombre("GitHub").subscribe(data=> {
       this.GitHub= data;
     })
-    this.datosPortfolio.mostrarRedSocial("LinkedIn").subscribe(data=> {
+    this.datosPortfolio.mostrarPorNombre("LinkedIn").subscribe(data=> {
       this.LinkedIn= data;
     })
   }

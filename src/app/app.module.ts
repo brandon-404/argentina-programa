@@ -20,6 +20,7 @@ import { RouterModule } from '@angular/router';
 import { CrudExperienciaComponent } from './components/crudR/crud-experiencia/crud-experiencia/crud-experiencia.component';
 import { CrudSocialComponent } from './components/crudR/crud-social/crud-social/crud-social.component';
 import { CrudSkillsComponent } from './components/crudR/crud-skills/crud-skills.component';
+import { CrudProyectComponent } from './components/crudR/crud-proyect/crud-proyect.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CrudSkillsComponent } from './components/crudR/crud-skills/crud-skills.
     CrudExperienciaComponent,
     CrudSocialComponent,
     CrudSkillsComponent,
+    CrudProyectComponent,
   ],
   imports: [BrowserModule, SlickCarouselModule,  HttpClientModule, FormsModule,
     RouterModule.forRoot([

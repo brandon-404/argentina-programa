@@ -1,0 +1,77 @@
+<div class="container">
+  <h2>Proyectos</h2>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre del Proyecto</th>
+        <th scope="col">Tecnologias Aplicadas</th>
+        <th scope="col">Link del Proyecto</th>
+        <th scope="col">Imangen asociada</th>
+        <th>#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let proyect of misProyectos" class="list-group-item-action">
+        <td scope="row">{{ proyect.id }}</td>
+        <td>{{ proyect.titulo }}</td>
+        <td>{{ proyect.tecnologias }}</td>
+        <td>{{ proyect.link }}</td>
+        <td>{{ proyect.link_image }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="delete(proyect.id)">
+            eliminar
+          </button>
+          <button class="btn btn-warning" (click)="openForEdit(proyect)">
+            modificar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">ingrese nuevos datos</div>
+      <div class="form-group">
+        <input
+          type="text"
+          [(ngModel)]="selectedProyectos.titulo"
+          placeholder="Ingrese el titulo del proyecto"
+          class="form-control"
+        />
+        <input
+          type="text"
+          [(ngModel)]="selectedProyectos.tecnologias"
+          placeholder="Ingrese las tecnologias utilizadas en el proyecto"
+          class="form-control"
+        />
+        <input
+          type="text"
+          [(ngModel)]="selectedProyectos.link"
+          placeholder="Ingrese el link del proyecto"
+          class="form-control"
+        />
+        <input
+          type="text"
+          [(ngModel)]="selectedProyectos.link_image"
+          placeholder="Ingrese el link de una imagen"
+          class="form-control"
+        />
+      </div>
+      <button
+        class="btn btn-primary"
+        (click)="addOrEdit()"
+        style="margin-top: 4px"
+      >
+        submit
+      </button>
+      <button
+        class="btn btn-primary"
+        (click)="cancelEdit()"
+        style="margin-left: 4px; margin-top: 4px"
+      >
+        cancel
+      </button>
+    </div>
+  </div>
+</div>

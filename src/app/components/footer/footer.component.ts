@@ -9,7 +9,6 @@ import { UserService } from 'src/app/services/user/user.service';
 export class FooterComponent implements OnInit {
   myUser:any;
   constructor(private datosPortfolio : UserService) { }
-
   ngOnInit(): void {
     this.datosPortfolio.mostrarUsuario().subscribe(data => {
       this.myUser = data;

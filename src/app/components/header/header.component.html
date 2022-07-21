@@ -23,16 +23,13 @@
     <ul class="desplegables">
       <li>Login</li>
       <li>
-        <input type="text" name="usuario" placeholder="Usuario" />
+        <input #userN type="text" name="usuario" placeholder="Usuario" />
       </li>
       <li>
-        <input type="password" name="password" placeholder="Contraseña" />
+        <input #userP type="password" name="password" placeholder="Contraseña" />
       </li>
       <li>
-        <button type="submit" class="boton">enviar</button>
-      </li>
-      <li>
-        <a href="">olvide mi contraseña</a>
+        <button type="submit" class="boton" (click)="session(userN.value, userP.value ); userP.value = this.nada">enviar</button>
       </li>
     </ul>
   </div>

@@ -2,6 +2,8 @@ export class User {
     id: number | undefined;
     name: string = "";
     titulo: string = "";
+    username: string = "";
+    password: string = "";
     correo: string = "";
     img_perfil: string = "";
     img_portada: string = "";

@@ -21,4 +21,7 @@ export class UserService {
   delete(id: number | undefined) : Observable<any>{
     return this.http.delete(this.URL +"/" + id+ "/delete")
   }
+  logg( myUser: User){
+    return this.http.post(this.URL +"/loggin", myUser);
+  }
 }

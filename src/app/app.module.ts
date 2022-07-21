@@ -22,6 +22,7 @@ import { CrudSocialComponent } from './components/crudR/crud-social/crud-social/
 import { CrudSkillsComponent } from './components/crudR/crud-skills/crud-skills.component';
 import { CrudProyectComponent } from './components/crudR/crud-proyect/crud-proyect.component';
 import { CrudUserComponent } from './components/crudR/crud-user/crud-user.component';
+import {CrudGuardGuard} from './guards/crud-guard.guard';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { CrudUserComponent } from './components/crudR/crud-user/crud-user.compon
     RouterModule.forRoot([
       { path: '', redirectTo : "portfolio", pathMatch : "full"},
       { path: 'portfolio', component: VistaPrincipalComponent },
-      { path: 'crudRepository', component: CrudRComponent }
+      { path: 'crudRepository', component: CrudRComponent, canActivate: [ CrudGuardGuard ] }
     ]),
   ],
   providers: [],

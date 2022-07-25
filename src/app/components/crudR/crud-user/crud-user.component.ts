@@ -14,8 +14,8 @@ export class CrudUserComponent implements OnInit {
   selectedUSer : User = new User();
 
   addOrEdit() {
-    if (this.selectedUSer.name != '') {
-      this.datosPortfolio.save(this.selectedUSer).subscribe((data) => {
+    if (this.selectedUSer.username != '') {
+      this.datosPortfolio.editar(this.selectedUSer.id ,this.selectedUSer).subscribe((data) => {
         this.datosPortfolio.mostrarUsuario().subscribe((data) => {
           this.myUser = data[0];
         });

@@ -9,11 +9,17 @@ import {ProyectosService} from 'src/app/services/proyectos/proyectos.service';
 export class ProyectosComponent implements OnInit {
   misProyectos:any;
   slideConfig = {
-    slidesToShow: 3,
+    slidesToShow: 4,
     autoplay: true,
     touchmove: true,
     arrows: false,  
     responsive: [
+      {
+        breakpoint: 1500,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
       {
         breakpoint: 1115,
         settings: {
@@ -32,6 +38,12 @@ export class ProyectosComponent implements OnInit {
           slidesToShow: 2,
         },
       },
+      {
+        breakpoint: 362,
+        settings: {
+          slidesToShow: 1,
+        },
+      }
     ],
   };
 

@@ -36,9 +36,6 @@ export class HeaderComponent implements OnInit {
       }else{
         this.router.navigate(['crudRepository'])
       }
-      if( this.token.getToken() != undefined){
-        console.log(this.token.getToken())
-      }
     });
    
     

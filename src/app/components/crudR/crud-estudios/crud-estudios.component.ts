@@ -51,12 +51,13 @@ export class CrudEstudiosComponent implements OnInit {
       confirmButtonText: 'si, eliminar!',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.datosPortfolio.deleteEstudio(id).subscribe((data) => {
+        if( this.datosPortfolio.deleteEstudio(id).subscribe((data) => {
           this.datosPortfolio.mostrarEstudios().subscribe((data) => {
             this.misEstudios = data;
           });
-        });
-        Swal.fire('Eliminado!', 'satisfactoriamente');
+        })){
+          Swal.fire('Eliminado!', 'satisfactoriamente');
+        }
       }
     });
   }

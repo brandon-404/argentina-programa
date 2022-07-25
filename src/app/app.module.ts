@@ -11,9 +11,9 @@ import { EstudiosComponent } from './components/estudios/estudios.component';
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
-import {HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CrudRComponent } from './components/crudR/crud-r/crud-r.component';
-import { CrudEstudiosComponent } from './components/crudR/crud-estudios/crud-estudios.component'
+import { CrudEstudiosComponent } from './components/crudR/crud-estudios/crud-estudios.component';
 import { FormsModule } from '@angular/forms';
 import { VistaPrincipalComponent } from './components/vista-principal/vista-principal.component';
 import { RouterModule } from '@angular/router';
@@ -22,7 +22,9 @@ import { CrudSocialComponent } from './components/crudR/crud-social/crud-social/
 import { CrudSkillsComponent } from './components/crudR/crud-skills/crud-skills.component';
 import { CrudProyectComponent } from './components/crudR/crud-proyect/crud-proyect.component';
 import { CrudUserComponent } from './components/crudR/crud-user/crud-user.component';
-import {CrudGuardGuard} from './guards/crud-guard.guard';
+import { CrudGuardGuard } from './guards/crud-guard.guard';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { HttpErrorInterceptorService } from './services/http-error-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -43,15 +45,29 @@ import {CrudGuardGuard} from './guards/crud-guard.guard';
     CrudProyectComponent,
     CrudUserComponent,
   ],
-  imports: [BrowserModule, SlickCarouselModule,  HttpClientModule, FormsModule,
+  imports: [
+    BrowserModule,
+    SlickCarouselModule,
+    HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
-      { path: '', redirectTo : "portfolio", pathMatch : "full"},
+      { path: '', redirectTo: 'portfolio', pathMatch: 'full' },
       { path: 'portfolio', component: VistaPrincipalComponent },
-      { path: 'crudRepository', component: CrudRComponent, canActivate: [ CrudGuardGuard ] }
+      {
+        path: 'crudRepository',
+        component: CrudRComponent,
+        canActivate: [CrudGuardGuard],
+      },
     ]),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptorService, multi: true },
+  ],
   bootstrap: [AppComponent],
- 
 })
 export class AppModule {}

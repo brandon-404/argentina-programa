@@ -15,7 +15,7 @@ export class UserService {
   save(usuario : User) : Observable<any>{
     return this.http.post(this.URL + "/save", usuario)
   }
-  editar(id: number,usuario : User) : Observable<any>{
+  editar(id: undefined,usuario : User) : Observable<any>{
     return this.http.put(this.URL +"/"+ id + "/update", usuario)
   }
   delete(id: number | undefined) : Observable<any>{

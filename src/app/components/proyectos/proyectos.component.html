@@ -1,19 +1,23 @@
 <h2>Proyectos Realizados</h2>
-<ngx-slick-carousel class="slick_proyectos" id="card_container"
-  class="carousel"
-  #slickModal="slick-carousel"
-  [config]="slideConfig"
->
-  <div ngxSlickItem *ngFor="let proyecto of misProyectos" class="slide">
-    <div class="articulo">
-      <div class="card">
-      <figure>
-        <img src="{{ proyecto.link_image }}" alt="" width="100%" />
-      </figure>
-      <h3>{{ proyecto.titulo }}</h3>
-      <p>{{ proyecto.tecnologias }}</p>
-      <a href={{proyecto.link}}>Ver Mas</a>
+<div class="carouselCont">
+  <ngx-slick-carousel
+    class="slick_proyectos"
+    id="card_container"
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+  >
+    <div ngxSlickItem *ngFor="let proyecto of misProyectos" class="slide">
+      <div class="articulo">
+        <div class="card">
+          <figure>
+            <img src="{{ proyecto.link_image }}" alt="" width="100%" />
+          </figure>
+          <h3>{{ proyecto.titulo }}</h3>
+          <p>{{ proyecto.tecnologias }}</p>
+          <a href="{{ proyecto.link }}">Ver Mas</a>
+        </div>
+      </div>
     </div>
-    </div>
-  </div>
-</ngx-slick-carousel>
+  </ngx-slick-carousel>
+</div>

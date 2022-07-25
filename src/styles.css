@@ -1,3 +1,18 @@
+:root{
+  --colorBackground: #eca;
+  --textColor: #fff;
+  --hederColor: #495371;
+  --perfilColor: #98b4aa;
+  --expColor: #74959a;
+  --estudiosColor: #74959a;
+  --SkillsColor: #74959a;
+  --ProyectosColor: #74959a;
+  --FooterColor: #495371;
+
+}
+
+
+
 
 * {
     box-sizing: border-box;
@@ -8,17 +23,20 @@
     height: 100%;
     font-family: Calibri;
   }
+  body{
+    height: 100%;
+  }
   .grid-portfolio > * {
     box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
     border-radius: 4px;
     padding: 10px;
     text-align: center;
-    color: #fff;
+    color: var(--textColor);
   }
   /*Header*/
   .header {
     grid-area: header;
-    background-color: #495371;
+    background-color: var(--hederColor);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -158,16 +176,15 @@
     grid-area: perfil-content;
     margin: 0;
     border-radius: 0px 40px 0px 0px;
-    padding: 10px 10px 0px 10px;
-    background-color: #98b4aa;
+    padding: 5px 10px 0px 10px;
+    background-color: var(--perfilColor);
     text-align: left;
-  }
-  .perfil-content p {
-    text-align: left;
-    margin-left: 30px;
   }
   .h {
-    margin-left: 100px;
+    margin-left: 105px;
+  }
+  .perfil-content h4{
+    margin-bottom: 20px;
   }
   .imagen {
     position: relative;
@@ -188,31 +205,41 @@
   /*Experiencia*/
   .experiencia {
     grid-area: experiencia;
-    background-color: #495371;
+    background-color: var(--expColor);
   }
+ 
+  .experiencia h2{
+    margin-bottom: 10px;
+    width: 100%;
+  }
+ 
   /*/Experiencia*/
   .estudios {
     grid-area: estudios;
-    background-color: #74959a;
+    background-color: var(--estudiosColor);
+  }
+  .estudios h2{
+    margin-bottom: 10px;
   }
   .lista {
     padding: 0px;
-    text-align: left;
+    text-align: center;
     margin-bottom: 0px;
   }
   /* skills*/
   .skills {
     grid-area: skills;
-    background-color: #98b4aa;
+    background-color: var(--SkillsColor);
     display: grid;
   }
   .skills-container {
-    padding: 0px 30px;
+    padding: 0 30px;
     height: 100%;
     color: black;
     display: grid;
     place-items: center;
   }
+
   
   .title {
     width: 100%;
@@ -264,9 +291,12 @@
   /*Proyectos*/
   .proyectos {
     grid-area: proyectos;
-    background-color: #495371;
+    background-color: var(--ProyectosColor);
     align-items: center;
     overflow: hidden;
+  }
+  .proyectos h2{
+    margin-bottom: 10px;
   }
   .slick_proyectos {
     margin: 0 auto;
@@ -275,9 +305,10 @@
     width: 90%;
   }
   .articulo {
-    margin-left: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
     height: 205px;
-    width: 170px;
+    width: 160px;
     background-color: #fff;
     border-radius: 15px;
     color: #495371;
@@ -298,7 +329,7 @@
   /*footer*/
   .footer {
     grid-area: footer;
-    background-color: #74959a;
+    background-color: var(--FooterColor);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -314,7 +345,7 @@
   
   /*/footer*/
   .grid-portfolio {
-    background-color: #f1e0ac;
+    background-color: var(--colorBackground);
     display: grid;
     gap: 10px;
     min-height: 100%;
@@ -325,7 +356,7 @@
       "estudios" auto
       "skills" auto
       "proyectos" auto
-      "footer" 20px;
+      "footer" 55px;
   }
     
   @media (min-width: 850px) {
@@ -335,7 +366,7 @@
         "perfil perfil perfil perfil" 147px
         "estudios estudios experiencia experiencia" auto
         "skills skills proyectos proyectos " auto
-        "footer footer footer footer" 50px /
+        "footer footer footer footer" 55px /
         25% 25% auto 100px;
     }
   }

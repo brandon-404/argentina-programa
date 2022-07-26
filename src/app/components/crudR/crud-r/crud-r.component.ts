@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class CrudRComponent implements OnInit {
   constructor(private router: Router) { }
   logOut() {
+    sessionStorage.removeItem('token');
     this.router.navigate(['/']);
   }
   ngOnInit(): void {

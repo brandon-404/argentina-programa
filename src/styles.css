@@ -262,6 +262,7 @@
     height: 10px;
     width: 100%;
     position: relative;
+    border-radius: 10px;
     display: flex;
     transform: scaleX(0);
     transform-origin: left;
@@ -269,7 +270,7 @@
   }
   .skills-container .bar span {
     height: 100%;
-    background-color: black;
+    background-color: #6040a0;
     position: absolute;
     border-radius: 10px;
     transform: scaleX(0);
@@ -356,7 +357,7 @@
       "estudios" auto
       "skills" auto
       "proyectos" auto
-      "footer" 55px;
+      "footer" 50px;
   }
     
   @media (min-width: 850px) {
@@ -366,7 +367,7 @@
         "perfil perfil perfil perfil" 147px
         "estudios estudios experiencia experiencia" auto
         "skills skills proyectos proyectos " auto
-        "footer footer footer footer" 55px /
+        "footer footer footer footer" 50px /
         25% 25% auto 100px;
     }
   }

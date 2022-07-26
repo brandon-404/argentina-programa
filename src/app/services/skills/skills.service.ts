@@ -7,10 +7,10 @@ import{Skills} from 'src/app/models/skills';
   providedIn: 'root',
 })
 export class SkillsService {
-  private URL = '/api/skills';
+  private URL = 'https://morning-dusk-12292.herokuapp.com/api/skills';
   constructor(private http: HttpClient) {}
   mostrarSkills(): Observable<any> {
-    return this.http.get(this.URL + '/all');
+    return this.http.get(`${this.URL}/all`);
   }
   save(skill : Skills) : Observable<any>{
     return this.http.post(this.URL + "/save", skill)

@@ -7,7 +7,7 @@ import {Proyectos} from 'src/app/models/proyectos';
   providedIn: 'root'
 })
 export class ProyectosService {
-  private URL = '/api/proyectos';
+  private URL = 'https://morning-dusk-12292.herokuapp.com/api/proyectos';
 
   constructor(private http: HttpClient) { }
   mostrarProyectos(): Observable<any> {

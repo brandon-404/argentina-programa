@@ -7,7 +7,7 @@ import {Experiencia} from 'src/app/models/experiencia';
   providedIn: 'root',
 })
 export class ExperienciaService {
-  private URL = '/api/experiencia';
+  private URL = 'https://morning-dusk-12292.herokuapp.com/api/experiencia';
   constructor(private http: HttpClient) {}
   mostrarExperiencia(): Observable<any> {
     return this.http.get(this.URL + '/all');

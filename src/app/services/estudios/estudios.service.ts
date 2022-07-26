@@ -9,7 +9,7 @@ import { Estudio } from 'src/app/models/estudios';
 
 export class EstudiosService {
 
-  private URL = '/api/estudios'
+  private URL = 'https://morning-dusk-12292.herokuapp.com/api/estudios'
 
   constructor(private http: HttpClient) { 
     

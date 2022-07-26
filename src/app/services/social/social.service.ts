@@ -8,7 +8,7 @@ import {RedSocial} from 'src/app/models/red-social'
   providedIn: 'root'
 })
 export class SocialService {
-  private URL = '/api/social';
+  private URL = 'https://morning-dusk-12292.herokuapp.com/api/social';
   constructor(private http: HttpClient) { }
   
   mostrarTodos(): Observable<any>{

@@ -7,10 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./crud-r.component.css']
 })
 export class CrudRComponent implements OnInit {
-
   constructor(private router: Router) { }
-  logOut(){
-    sessionStorage.removeItem("token")
+  logOut() {
     this.router.navigate(['/']);
   }
   ngOnInit(): void {

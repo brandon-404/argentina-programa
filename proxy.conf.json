@@ -1,7 +1,0 @@
-{
-    "/api/*":{
-        "target": "https://morning-dusk-12292.herokuapp.com",
-        "secure": false,
-        "logLevel" : "debug"
-    }
-}

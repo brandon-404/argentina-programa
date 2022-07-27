@@ -7,7 +7,7 @@ import {User} from 'src/app/models/user';
   providedIn: 'root'
 })
 export class UserService {
-  private URL = '/api/users';
+  private URL = 'https://morning-dusk-12292.herokuapp.com/api/users';
   constructor(private http: HttpClient) { }
   mostrarUsuario(): Observable<any> {
     return this.http.get(this.URL + '/all');
